@@ -1,23 +1,31 @@
 import { cn } from "@/lib/utils"
 
-export default function Logo({ className }: { className?: string }) {
+export default function Logo({ className, showTagline = false }: { className?: string, showTagline?: boolean }) {
   return (
-    <div className={cn("flex items-center justify-center", className)}>
+    <div className={cn("flex items-center", className)}>
        <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
+        width="40"
+        height="40"
+        viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-primary mr-2"
-      >
-        <rect width="32" height="32" rx="8" fill="currentColor"/>
-        <path d="M9 23V9H14.5C16.9853 9 19 11.0147 19 13.5V13.5C19 15.9853 16.9853 18 14.5 18H12" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 18L15 23" stroke="hsl(var(--primary-foreground))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-      <span className="font-headline text-xl font-bold tracking-tighter">
-        Landcraft Holdings
-      </span>
+        className="mr-2"
+        >
+        <g>
+            <rect width="100" height="100" rx="20" fill="hsl(var(--primary))" />
+            <path d="M30 70 L30 30 L50 30" stroke="hsl(var(--primary-foreground))" strokeWidth="10" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M70 30 L70 70 L50 70" stroke="hsl(var(--primary-foreground))" strokeWidth="10" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+    </svg>
+      <div>
+        <span className="font-headline text-xl font-bold tracking-tighter uppercase">
+          Landcraft Holdings
+        </span>
+        {showTagline && (
+        <p className="font-body text-xs text-muted-foreground -mt-1">
+            building your dream
+        </p>
+        )}
+      </div>
     </div>
   )
 }

@@ -15,7 +15,6 @@ const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/enhance-image", label: "Enhance Image" },
 ];
 
 export default function Header() {
@@ -43,7 +42,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Logo />
+            <Logo showTagline />
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => (
@@ -61,12 +60,12 @@ export default function Header() {
           </SheetTrigger>
           <div className="flex-1 md:hidden">
              <Link href="/" className="flex items-center">
-              <Logo />
+              <Logo showTagline />
             </Link>
           </div>
           <SheetContent side="left" className="pr-0">
             <Link href="/" className="mr-6 flex items-center space-x-2 p-4">
-              <Logo />
+              <Logo showTagline />
             </Link>
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
