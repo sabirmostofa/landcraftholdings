@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A stunning modern high-rise building at dusk, with lights illuminating the facade and a dramatic sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1531591022136-eb8b0da1e6d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcwMDU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern architecture"
+    },
+    {
+      "id": "about-us-banner",
+      "description": "A wide shot of a modern city skyline, representing the company's vision and scale.",
+      "imageUrl": "https://images.unsplash.com/photo-1493134799591-2c9eed26201a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaXR5JTIwc2t5bGluZXxlbnwwfHx8fDE3NzAwNjcyNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city skyline"
+    },
+    {
+      "id": "uttara-1",
+      "description": "Elegant residential building in Uttara with a clean, white facade and large balconies.",
+      "imageUrl": "https://images.unsplash.com/photo-1672508013582-035e75fb76ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZXNpZGVudGlhbCUyMGJ1aWxkaW5nfGVufDB8fHx8MTc3MDEwODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "residential building"
+    },
+    {
+      "id": "uttara-2",
+      "description": "Contemporary apartment complex in Uttara featuring geometric patterns and green spaces.",
+      "imageUrl": "https://images.unsplash.com/photo-1614115863913-b04024ec4ed1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcGFydG1lbnQlMjBjb21wbGV4fGVufDB8fHx8MTc3MDEwODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "apartment complex"
+    },
+    {
+      "id": "aftabnagar-1",
+      "description": "Luxurious property in Aftabnagar with a grand entrance and intricate architectural details.",
+      "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBidWlsZGluZ3xlbnwwfHx8fDE3NzAxMDgwMzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury building"
+    },
+    {
+      "id": "aftabnagar-2",
+      "description": "Modern glass-fronted commercial building in Aftabnagar reflecting the blue sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1549757521-4160565ff3de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NzAxMDQ4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office building"
+    },
+    {
+      "id": "banani-1",
+      "description": "Chic and stylish apartment building in the bustling area of Banani.",
+      "imageUrl": "https://images.unsplash.com/photo-1653972233229-1b8c042d6d8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBhcGFydG1lbnR8ZW58MHx8fHwxNzcwMDUzNjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern apartment"
+    },
+    {
+      "id": "banani-2",
+      "description": "A high-end residential tower in Banani with a swimming pool on the rooftop.",
+      "imageUrl": "https://images.unsplash.com/photo-1643856938515-ed931dd43a39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyb29mdG9wJTIwcG9vbHxlbnwwfHx8fDE3NzAxMDM5NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rooftop pool"
+    },
+    {
+      "id": "mirpur-1",
+      "description": "A well-designed family apartment complex in Mirpur with a playground.",
+      "imageUrl": "https://images.unsplash.com/photo-1629042306547-c1d7c6c85ffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmYW1pbHklMjBhcGFydG1lbnRzfGVufDB8fHx8MTc3MDEwODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "family apartments"
+    },
+    {
+      "id": "mirpur-2",
+      "description": "A striking architectural building in Mirpur, combining traditional and modern elements.",
+      "imageUrl": "https://images.unsplash.com/photo-1614595737683-1740e41bfaac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcwMDU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern architecture"
+    },
+    {
+      "id": "team-member-1",
+      "description": "Professional headshot of the CEO.",
+      "imageUrl": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzcwMDQ0NTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Professional headshot of the Lead Architect.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NzAxMDgwMzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Professional headshot of the Project Manager.",
+      "imageUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzcwMDQ0NTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional man"
+    }
+  ]
 }
