@@ -1,7 +1,6 @@
 "use client";
 
-// 1. Change import to 'useActionState' from 'react'
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -25,13 +24,15 @@ const contactFormSchema = z.object({
     message: z
         .string()
         .min(10, { message: "Message must be at least 10 characters." }),
+    company: z.string().optional(), // Honeypot field
 });
 
 export default function ContactForm() {
     const { toast } = useToast();
 
-    // 2. Update to useActionState.
-    // It returns [state, action, isPending]
+    // State for the countdown timer (in seconds)
+    const [countdown, setCountdown] = useState(0);
+
     const [state, formAction, isPending] = useActionState(submitContactForm, {
         message: "",
         success: false,
@@ -39,13 +40,22 @@ export default function ContactForm() {
 
     const form = useForm<z.infer<typeof contactFormSchema>>({
         resolver: zodResolver(contactFormSchema),
-        defaultValues: {
-            name: "",
-            email: "",
-            message: "",
-        },
+        defaultValues: { name: "", email: "", message: "", company: "" },
     });
 
+    // EFFECT 1: Handles the ticking of the countdown
+    useEffect(() => {
+        if (countdown <= 0) return;
+
+        const timer = setInterval(() => {
+            setCountdown((prev) => prev - 1);
+        }, 1000);
+
+        // Cleanup: Clear interval if component unmounts
+        return () => clearInterval(timer);
+    }, [countdown]);
+
+    // EFFECT 2: Handles the response from the Server Action
     useEffect(() => {
         if (state.message) {
             toast({
@@ -53,16 +63,32 @@ export default function ContactForm() {
                 description: state.message,
                 variant: state.success ? "default" : "destructive",
             });
+
             if (state.success) {
                 form.reset();
+                setCountdown(60); // Start 60-second cooldown on success
             }
         }
     }, [state, toast, form]);
 
     return (
         <Form {...form}>
-            {/* 3. The formAction remains the same */}
             <form action={formAction} className="space-y-6">
+                {/* HONEYPOT: Hidden from humans via CSS and Accessibility attributes */}
+                <div className="hidden" aria-hidden="true">
+                    <FormField
+                        control={form.control}
+                        name="company"
+                        render={({ field }) => (
+                            <Input
+                                {...field}
+                                tabIndex={-1}
+                                autoComplete="off"
+                            />
+                        )}
+                    />
+                </div>
+
                 <FormField
                     control={form.control}
                     name="name"
@@ -76,6 +102,7 @@ export default function ContactForm() {
                         </FormItem>
                     )}
                 />
+
                 <FormField
                     control={form.control}
                     name="email"
@@ -85,7 +112,7 @@ export default function ContactForm() {
                             <FormControl>
                                 <Input
                                     type="email"
-                                    placeholder="your.email@example.com"
+                                    placeholder="email@example.com"
                                     {...field}
                                 />
                             </FormControl>
@@ -93,6 +120,7 @@ export default function ContactForm() {
                         </FormItem>
                     )}
                 />
+
                 <FormField
                     control={form.control}
                     name="message"
@@ -100,8 +128,8 @@ export default function ContactForm() {
                         <FormItem>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <ReviewArea
-                                    placeholder="How can we help you?"
+                                <Textarea
+                                    placeholder="How can we help?"
                                     {...field}
                                     className="min-h-[120px]"
                                 />
@@ -111,16 +139,18 @@ export default function ContactForm() {
                     )}
                 />
 
-                {/* 4. Use the isPending state directly in the button */}
-                <Button type="submit" disabled={isPending} className="w-full">
-                    {isPending ? "Sending..." : "Send Message"}
+                <Button
+                    type="submit"
+                    disabled={isPending || countdown > 0}
+                    className="w-full"
+                >
+                    {isPending
+                        ? "Sending..."
+                        : countdown > 0
+                          ? `Wait ${countdown}s...`
+                          : "Send Message"}
                 </Button>
             </form>
         </Form>
     );
-}
-
-// Helper component for clean JSX
-function ReviewArea(props: any) {
-    return <Textarea {...props} />;
 }

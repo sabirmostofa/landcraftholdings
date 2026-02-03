@@ -23,6 +23,13 @@ export async function submitContactForm(
     prevState: ContactFormState,
     formData: FormData,
 ): Promise<ContactFormState> {
+    //HoneyPot Check
+    const honeypot = formData.get("company") as string;
+    // Check if it exists and is a string
+    if (typeof honeypot === "string" && honeypot.length > 0) {
+        return { message: "Message sent successfully.", success: true };
+    }
+
     const validatedFields = contactFormSchema.safeParse({
         name: formData.get("name"),
         email: formData.get("email"),
