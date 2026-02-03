@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { placeholderImages } from "@/lib/placeholder-images.json";
 import Anisv from "@/assets/Anis.png";
+import Salahuddin from "@/assets/salahuddin-v1.png";
 
 export const metadata: Metadata = {
     title: "About Us",
@@ -24,7 +25,7 @@ const teamMembers = [
     {
         name: "Salah Uddin Ahammed",
         role: "Managing Director",
-        imageId: "",
+        localImage: Salahuddin,
         fallback: "SA",
     },
 ];
